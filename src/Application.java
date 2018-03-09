@@ -71,6 +71,17 @@ public class Application {
 			//whether exceptions are thrown or not
 			//you could put the whole CLOSE stuff into this block.
 			//even the try catch parts
+			
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+				System.out.println("Cannot close the file: " + file1.toString());
+			}
+			catch (NullPointerException ex) {
+				System.out.println("This file was never opened: " + file1.toString());
+			}
 		}
 		
 		//I missed why, but you want to close the file when you're done reading it
